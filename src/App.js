@@ -48,7 +48,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "https://sheetdb.io/api/v1/stunjaec2vt4e", // Replace with your SheetDB endpoint
+        "https://sheetdb.io/api/v1/k74u8n5i97uy4", // Replace with your SheetDB endpoint
         { data: submission }, // SheetDB expects the data to be wrapped in a "data" object
         {
           headers: {
@@ -72,13 +72,17 @@ function App() {
   return (
     <div className="App">
       {/* Title */}
+      <br></br>
+      <br></br>
+     <center> 
       <header className="app-header">
-        <h1>Blind Code APP BY CODEX CREW</h1>
+        <h1>Blindathon by DSC</h1>
       </header>
+    </center>
 
       {/* Main Form */}
       <div className="form-container">
-        <h2>Blind Code APP BY CODEX CREW</h2>
+       <center> <h2>Blindathon by DSC</h2> </center>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Name:</label>
@@ -149,7 +153,9 @@ function App() {
 
       {/* Footer */}
       <footer className="app-footer">
-        <p>Made by Ashis Kumar Behura</p>
+        <center>
+        <p>Made by Data Science Club - SRM</p>
+        </center>
       </footer>
     </div>
   );

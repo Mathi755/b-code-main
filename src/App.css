@@ -52,9 +52,14 @@
     caret-color: #00ff88; /* Green cursor */
     resize: none; /* Disable resizing */
   }
-
+  
   textarea.code-editor::placeholder {
     color: #555; /* Placeholder text color */
+  }
+  
+  textarea.code-editor::selection {
+    background: #000000; /* Same as background color */
+    color: transparent; /* Hide the text when highlighted */
   }
 
   button {
