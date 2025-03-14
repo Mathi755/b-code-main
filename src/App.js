@@ -150,7 +150,7 @@ function App() {
           <button type="submit">Submit</button>
         </form>
       </div>
-
+<br></br>
       {/* Footer */}
       <footer className="app-footer">
         <center>

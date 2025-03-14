@@ -1,96 +1,157 @@
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #1e1e1e; /* Dark background for the entire app */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #ffffff; /* White text for better contrast */
-  }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1e1e; /* Dark background for the entire app */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #ffffff; /* White text for better contrast */
+}
 
+.App {
+  background-color: #2a2a2a; /* Slightly lighter dark background for the form */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px; /* Maximum width for larger screens */
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #00ff88; /* Green color for the heading */
+  font-size: 2.5em; /* Increase the size of the header text */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Add more space between form groups */
+}
+
+label {
+  display: block;
+  margin-bottom: 10px; /* Add more space below labels */
+  font-weight: bold;
+  font-size: 1.2em; /* Increase the size of the form labels */
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px; /* Add more padding for better spacing */
+  border: 1px solid #444;
+  border-radius: 5px; /* Increase border radius */
+  font-size: 1.2em; /* Increase the size of the form inputs */
+  background-color: #333; /* Dark background for inputs */
+  color: #ffffff; /* White text for inputs */
+}
+
+textarea.code-editor {
+  height: 200px; /* Increase the height of the code editor */
+  font-family: 'Courier New', monospace;
+  background-color: #000000; /* Pitch black background */
+  color: transparent; /* Hide the text */
+  caret-color: #00ff88; /* Green cursor */
+  resize: none; /* Disable resizing */
+}
+
+textarea.code-editor::placeholder {
+  color: #555; /* Placeholder text color */
+}
+
+textarea.code-editor::selection {
+  background: #000000; /* Same as background color */
+  color: transparent; /* Hide the text when highlighted */
+}
+
+button {
+  width: 100%;
+  padding: 15px; /* Add more padding for better spacing */
+  background-color: #00ff88; /* Green button */
+  color: #1e1e1e; /* Dark text for the button */
+  border: none;
+  border-radius: 5px; /* Increase border radius */
+  font-size: 1.2em; /* Increase the size of the button text */
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00cc66; /* Darker green on hover */
+}
+
+.question-text {
+  background-color: #2a2a2a;
+  padding: 20px; /* Add more padding */
+  border-radius: 10px; /* Increase border radius */
+  border: 1px solid #444;
+  font-family: 'Courier New', monospace;
+  font-size: 1.2em; /* Increase the size of the question text */
+  line-height: 1.6; /* Improve readability */
+  color: #ffffff;
+}
+
+.question-text p {
+  margin: 10px 0; /* Add more space above and below paragraphs */
+}
+
+.question-text strong {
+  color: #00ff88;
+}
+
+.app-footer {
+  text-align: center; /* Center align the footer text */
+  padding: 20px; /* Add padding around the footer */
+  background-color: #f1f1f1; /* Add a background color */
+  border-top: 1px solid #ccc; /* Add a top border */
+}
+
+.app-footer p {
+  font-size: 1.2em; /* Increase the size of the footer text */
+  margin: 0; /* Remove default margin */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
   .App {
-    background-color: #2a2a2a; /* Slightly lighter dark background for the form */
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    width: 100%;
   }
 
   h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #00ff88; /* Green color for the heading */
+    font-size: 2em;
   }
 
-  .form-group {
-    margin-bottom: 15px;
-  }
-
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+  .form-group label {
+    font-size: 1em;
   }
 
   input, select, textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #444;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: #333; /* Dark background for inputs */
-    color: #ffffff; /* White text for inputs */
-  }
-
-  textarea.code-editor {
-    height: 150px;
-    font-family: 'Courier New', monospace;
-    background-color: #000000; /* Pitch black background */
-    color: transparent; /* Hide the text */
-    caret-color: #00ff88; /* Green cursor */
-    resize: none; /* Disable resizing */
-  }
-  
-  textarea.code-editor::placeholder {
-    color: #555; /* Placeholder text color */
-  }
-  
-  textarea.code-editor::selection {
-    background: #000000; /* Same as background color */
-    color: transparent; /* Hide the text when highlighted */
+    font-size: 1em;
+    padding: 10px;
   }
 
   button {
-    width: 100%;
+    font-size: 1em;
     padding: 10px;
-    background-color: #00ff88; /* Green button */
-    color: #1e1e1e; /* Dark text for the button */
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
   }
 
-  button:hover {
-    background-color: #00cc66; /* Darker green on hover */
-  }
   .question-text {
-    background-color: #2a2a2a;
+    font-size: 1em;
     padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #444;
-    font-family: 'Courier New', monospace;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #ffffff;
   }
 
-  .question-text p {
-    margin: 5px 0;
+  .app-footer {
+    text-align: center; /* Center align the footer text */
+    padding: 20px; /* Add padding around the footer */
+    background-color: #2a2a2a; /* Change to your desired background color */
+    border-top: 1px solid #17a65a; /* Add a top border */
+    color: #0000ff; /* Change to blue text color */
   }
-
-  .question-text strong {
-    color: #00ff88;
+  
+  .app-footer p {
+    font-size: 1.2em; /* Increase the size of the footer text */
+    margin: 0; /* Remove default margin */
   }
+}
