@@ -72,17 +72,17 @@ function App() {
   return (
     <div className="App">
       {/* Title */}
-      <br></br>
-      <br></br>
+     
+      
      <center> 
       <header className="app-header">
-        <h1>Blindathon by DSC</h1>
+        <h1>BLINDATHON</h1>
       </header>
     </center>
 
       {/* Main Form */}
       <div className="form-container">
-       <center> <h2>Blindathon by DSC</h2> </center>
+       
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Name:</label>
@@ -151,12 +151,13 @@ function App() {
         </form>
       </div>
 <br></br>
-      {/* Footer */}
+      {/* Footer 
       <footer className="app-footer">
         <center>
-        <p>Made by Data Science Club - SRM</p>
+        <p>Made by TEAM INNOVENTURE</p>
         </center>
       </footer>
+      */}
     </div>
   );
 }
