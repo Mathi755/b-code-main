@@ -18,16 +18,34 @@ function App() {
       e.preventDefault();
     };
 
-    // Add event listeners
+    // Add event listeners for the entire document
     document.addEventListener('contextmenu', disableRightClick); // Disable right-click
     document.addEventListener('copy', disableCopyPaste); // Disable copy
     document.addEventListener('paste', disableCopyPaste); // Disable paste
+    document.addEventListener('keydown', function(e) {
+      if (e.ctrlKey && (e.key === 'c' || e.key === 'v')) {
+          e.preventDefault();
+          alert('Copying and pasting are disabled on this website.');
+      }
+  });
+  
+    // Add event listeners specifically for the code editor
+    const codeEditor = document.querySelector('.code-editor');
+    if (codeEditor) {
+      codeEditor.addEventListener('copy', disableCopyPaste);
+      codeEditor.addEventListener('paste', disableCopyPaste);
+    }
 
     // Cleanup function to remove event listeners
     return () => {
       document.removeEventListener('contextmenu', disableRightClick);
       document.removeEventListener('copy', disableCopyPaste);
       document.removeEventListener('paste', disableCopyPaste);
+
+      if (codeEditor) {
+        codeEditor.removeEventListener('copy', disableCopyPaste);
+        codeEditor.removeEventListener('paste', disableCopyPaste);
+      }
     };
   }, []);
 
@@ -72,17 +90,14 @@ function App() {
   return (
     <div className="App">
       {/* Title */}
-     
-      
-     <center> 
-      <header className="app-header">
-        <h1>BLINDATHON</h1>
-      </header>
-    </center>
+      <center> 
+        <header className="app-header">
+          <h1>BLINDATHON</h1>
+        </header>
+      </center>
 
       {/* Main Form */}
       <div className="form-container">
-       
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Name:</label>
@@ -150,14 +165,13 @@ function App() {
           <button type="submit">Submit</button>
         </form>
       </div>
-<br></br>
-      {/* Footer 
+      <br></br>
+      
       <footer className="app-footer">
         <center>
-        <p>Made by TEAM INNOVENTURE</p>
+          <p>Made by TEAM INNOVENTURE</p>
         </center>
       </footer>
-      */}
     </div>
   );
 }

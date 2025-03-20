@@ -1,20 +1,20 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #1e1e1e; /* Dark background for the entire app */
+  background-color: #F9FAFB; /* Light background color */
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  color: #ffffff; /* White text for better contrast */
+  color: #1F2937; /* Text color */
 }
 
 .App {
-  background-color: #2a2a2a; /* Slightly lighter dark background for the form */
+  background-color: #FFFFFF; /* Surface color */
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 600px; /* Maximum width for larger screens */
   margin: 20px;
@@ -23,7 +23,7 @@ body {
 h1 {
   text-align: center;
   margin-bottom: 30px;
-  color: #00ff88; /* Green color for the heading */
+  color: #1E3A8A; /* Primary color */
   font-size: 2.5em; /* Increase the size of the header text */
 }
 
@@ -36,41 +36,42 @@ label {
   margin-bottom: 10px; /* Add more space below labels */
   font-weight: bold;
   font-size: 1.2em; /* Increase the size of the form labels */
+  color: #1F2937; /* Text color */
 }
 
 input, select, textarea {
   width: 100%;
   padding: 12px; /* Add more padding for better spacing */
-  border: 1px solid #444;
+  border: 1px solid #E5E7EB; /* Border color */
   border-radius: 5px; /* Increase border radius */
   font-size: 1.2em; /* Increase the size of the form inputs */
-  background-color: #333; /* Dark background for inputs */
-  color: #ffffff; /* White text for inputs */
+  background-color: #FFFFFF; /* Surface color */
+  color: #1F2937; /* Text color */
 }
 
 textarea.code-editor {
   height: 200px; /* Increase the height of the code editor */
   font-family: 'Courier New', monospace;
-  background-color: #000000; /* Pitch black background */
+  background-color: #FFFFFF; /* Surface color */
   color: transparent; /* Hide the text */
-  caret-color: #00ff88; /* Green cursor */
+  caret-color: #1E3A8A; /* Primary color */
   resize: none; /* Disable resizing */
 }
 
 textarea.code-editor::placeholder {
-  color: #555; /* Placeholder text color */
+  color: #6B7280; /* Muted text color */
 }
 
 textarea.code-editor::selection {
-  background: #000000; /* Same as background color */
+  background: #FFFFFF; /* Same as background color */
   color: transparent; /* Hide the text when highlighted */
 }
 
 button {
   width: 100%;
   padding: 15px; /* Add more padding for better spacing */
-  background-color: #00ff88; /* Green button */
-  color: #1e1e1e; /* Dark text for the button */
+  background-color: #10B981; /* Secondary color */
+  color: #FFFFFF; /* Surface color */
   border: none;
   border-radius: 5px; /* Increase border radius */
   font-size: 1.2em; /* Increase the size of the button text */
@@ -78,18 +79,18 @@ button {
 }
 
 button:hover {
-  background-color: #00cc66; /* Darker green on hover */
+  background-color: #059669; /* Secondary dark color */
 }
 
 .question-text {
-  background-color: #2a2a2a;
+  background-color: #FFFFFF; /* Surface color */
   padding: 20px; /* Add more padding */
   border-radius: 10px; /* Increase border radius */
-  border: 1px solid #444;
+  border: 1px solid #E5E7EB; /* Border color */
   font-family: 'Courier New', monospace;
   font-size: 1.2em; /* Increase the size of the question text */
   line-height: 1.6; /* Improve readability */
-  color: #ffffff;
+  color: #1F2937; /* Text color */
 }
 
 .question-text p {
@@ -97,14 +98,15 @@ button:hover {
 }
 
 .question-text strong {
-  color: #00ff88;
+  color: #1E3A8A; /* Primary color */
 }
 
 .app-footer {
   text-align: center; /* Center align the footer text */
   padding: 20px; /* Add padding around the footer */
-  background-color: #3b0c5c; /* Add a background color */
-  border-top: 1px solid #ccc; /* Add a top border */
+  background-color: #FFFFFF; /* Surface color */
+  border-top: 1px solid #E5E7EB; /* Border color */
+  color: #1E3A8A; /* Primary color */
 }
 
 .app-footer p {
@@ -145,9 +147,9 @@ button:hover {
   .app-footer {
     text-align: center; /* Center align the footer text */
     padding: 20px; /* Add padding around the footer */
-    background-color: #2a2a2a; /* Change to your desired background color */
-    border-top: 1px solid #17a65a; /* Add a top border */
-    color: #0000ff; /* Change to blue text color */
+    background-color: #FFFFFF; /* Surface color */
+    border-top: 1px solid #E5E7EB; /* Border color */
+    color: #1E3A8A; /* Primary color */
   }
   
   .app-footer p {
