@@ -41,7 +41,19 @@ function App() {
       document.removeEventListener('contextmenu', disableRightClick);
       document.removeEventListener('copy', disableCopyPaste);
       document.removeEventListener('paste', disableCopyPaste);
-
+      document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+      });
+      document.addEventListener('copy', function(e) {
+        e.preventDefault();
+        alert('Copying is disabled on this website.');
+    });
+    
+    document.addEventListener('paste', function(e) {
+        e.preventDefault();
+        alert('Pasting is disabled on this website.');
+    });
+    
       if (codeEditor) {
         codeEditor.removeEventListener('copy', disableCopyPaste);
         codeEditor.removeEventListener('paste', disableCopyPaste);
