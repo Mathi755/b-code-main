@@ -120,7 +120,11 @@ function App() {
       {/* Title */}
       <center> 
         <header className="app-header">
-          <h1>BLINDATHON</h1>
+        <div className="text-center p-4 sm:p-6 md:p-8 lg:p-6 xl:p-6">
+          <h1 className="text-4xl sm:text-4xl md:text-4xl lg:text-7xl font-extrabold bg-white bg-clip-text text-transparent font-aboutfont animate__animated animate__fadeInUp duration-500" style={{textShadow : "0 0 6px white"}}>
+      BLINDATHON <br /> {/*<p className='className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold bg-white bg-clip-text text-transparent font-otherfont'>2024-'25</p>*/}
+      </h1>
+      </div>
         </header>
       </center>
 
