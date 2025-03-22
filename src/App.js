@@ -7,6 +7,27 @@ function App() {
   const [college, setCollege] = useState('');
   const [language, setLanguage] = useState('C++');
   const [code, setCode] = useState('');
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+
+  const questions = [
+    {
+      problemStatement: "Write a function to reverse a string.",
+      testCases: [
+        { input: "hello", output: "olleh" },
+        { input: "world", output: "dlrow" },
+        { input: "12345", output: "54321" },
+      ],
+    },
+    {
+      problemStatement: "Write a function to check if a string is a palindrome.",
+      testCases: [
+        { input: "racecar", output: "true" },
+        { input: "hello", output: "false" },
+        { input: "madam", output: "true" },
+      ],
+    },
+    // Add more questions as needed
+  ];
 
   // Disable right-click, copy, and paste
   useEffect(() => {
@@ -27,11 +48,12 @@ function App() {
           e.preventDefault();
           alert('Copying and pasting are disabled on this website.');
       }
-  });
-  
+    });
+
     // Add event listeners specifically for the code editor
     const codeEditor = document.querySelector('.code-editor');
     if (codeEditor) {
+      codeEditor.addEventListener('contextmenu', disableRightClick);
       codeEditor.addEventListener('copy', disableCopyPaste);
       codeEditor.addEventListener('paste', disableCopyPaste);
     }
@@ -41,20 +63,9 @@ function App() {
       document.removeEventListener('contextmenu', disableRightClick);
       document.removeEventListener('copy', disableCopyPaste);
       document.removeEventListener('paste', disableCopyPaste);
-      document.addEventListener('contextmenu', function(event) {
-        event.preventDefault();
-      });
-      document.addEventListener('copy', function(e) {
-        e.preventDefault();
-        alert('Copying is disabled on this website.');
-    });
-    
-    document.addEventListener('paste', function(e) {
-        e.preventDefault();
-        alert('Pasting is disabled on this website.');
-    });
-    
+
       if (codeEditor) {
+        codeEditor.removeEventListener('contextmenu', disableRightClick);
         codeEditor.removeEventListener('copy', disableCopyPaste);
         codeEditor.removeEventListener('paste', disableCopyPaste);
       }
@@ -90,6 +101,9 @@ function App() {
       if (response.status === 201) {
         // 201 means "Created" in HTTP status codes
         alert("Form submitted successfully!");
+        // Move to the next question
+        setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+        setCode(''); // Clear the code editor
       } else {
         alert("Failed to submit form.");
       }
@@ -98,6 +112,8 @@ function App() {
       alert("Form submission failed. Please try again.");
     }
   };
+
+  const currentQuestion = questions[currentQuestionIndex];
 
   return (
     <div className="App">
@@ -145,23 +161,21 @@ function App() {
             </select>
           </div>
 
-          <div className="form-group">
-            <label>Question:</label>
-            <div className="question-text">
-              <p>
-                <strong>Problem Statement:</strong> Write a function to reverse a string.
-              </p>
-              <p>
-                <strong>Test Case 1:</strong> Input: "hello" → Output: "olleh"
-              </p>
-              <p>
-                <strong>Test Case 2:</strong> Input: "world" → Output: "dlrow"
-              </p>
-              <p>
-                <strong>Test Case 3:</strong> Input: "12345" → Output: "54321"
-              </p>
+          {currentQuestion && (
+            <div className="form-group">
+              <label>Question:</label>
+              <div className="question-text">
+                <p>
+                  <strong>Problem Statement:</strong> {currentQuestion.problemStatement}
+                </p>
+                {currentQuestion.testCases.map((testCase, index) => (
+                  <p key={index}>
+                    <strong>Test Case {index + 1}:</strong> Input: "{testCase.input}" → Output: "{testCase.output}"
+                  </p>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="form-group">
             <label>Code:</label>
